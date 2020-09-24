@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { getCartProducts, getSecret, createPaymentIntent } from '../repository';
+import { getCartProducts, getSecret, } from '../repository';
 import CartItem from './CartItem';
 
 export default class Cart extends React.Component {

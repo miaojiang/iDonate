@@ -48,9 +48,6 @@ class Checkout extends React.Component {
 		let clientSecret = localStorage.getItem('clientSecret');
 
 		if (!stripe || !elements || !clientSecret) {
-			// Stripe.js has not yet loaded.
-			// Make  sure to disable form submission until Stripe.js has loaded.
-			console.log('Encountered a technical issue');
 			alert('We encountered a technical issue.');
 			return;
 		}
@@ -66,7 +63,7 @@ class Checkout extends React.Component {
 
 		if (result.error) {
 			// Show error to your customer (e.g., insufficient funds)
-			alert("Payment failed:" + result.error);
+			alert("Payment failed:" + result.error.message);
 			this.disablePayButton(false);
 		} else {
 			// The payment has been processed!
@@ -80,11 +77,9 @@ class Checkout extends React.Component {
 				window.location = './thanks';
 			}
 		}
-
 	}
 
 	render() {
-		const { products, total } = this.state;
 		return (
 			<div name="cardSection" className="container">
 			<h3 className="card-title">Payment Method</h3>
