@@ -24,6 +24,7 @@ You will need to following to run this demo:
 
 ### Authenticate with the Stripe CLI and start the webhook forwarding
 ```stripe login```
+
 ```stripe listen --forward-to http://localhost:5000/webhook```
 
 ### Update the configuration file with your Stripe credentials
