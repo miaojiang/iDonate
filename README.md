@@ -16,6 +16,7 @@ You will need to following to run this demo:
 
 ### Clone the repository
 ```gh repo clone miaojiang/iDonate```
+
 ```cd iDonate```
 
 ### Install dependencies using npm
